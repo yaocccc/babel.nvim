@@ -1,0 +1,89 @@
+name: Bug Report
+description: Report a bug or unexpected behavior
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug!
+        Please fill out the form below to help us fix it.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the bug
+      description: A clear and concise description of what the bug is.
+      placeholder: When I try to translate text, the plugin...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Steps to reproduce the behavior.
+      placeholder: |
+        1. Select text in visual mode
+        2. Run `:Babel en`
+        3. See error...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: config
+    attributes:
+      label: Your configuration
+      description: Paste your babel.nvim configuration here.
+      render: lua
+      placeholder: |
+        require("babel").setup({
+          -- your config
+        })
+    validations:
+      required: false
+
+  - type: input
+    id: nvim-version
+    attributes:
+      label: Neovim version
+      description: "Output of `nvim --version` (first line)"
+      placeholder: "NVIM v0.10.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - Linux
+        - macOS
+        - Windows
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error messages / Logs
+      description: Paste any error messages or relevant logs here.
+      render: shell
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I have searched existing issues to ensure this bug has not already been reported.
+          required: true
+        - label: I am using the latest version of babel.nvim.
+          required: false

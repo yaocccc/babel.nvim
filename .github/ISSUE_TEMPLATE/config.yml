@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Question / Discussion
+    url: https://github.com/acidsugarx/babel.nvim/discussions
+    about: Ask questions or start a discussion
+  - name: Documentation
+    url: https://github.com/acidsugarx/babel.nvim#readme
+    about: Check the README for usage and configuration
