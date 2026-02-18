@@ -78,7 +78,7 @@ function M.show_float(text, _original, opts)
 
   -- Create window
   local win = vim.api.nvim_open_win(buf, true, {
-    relative = "editor",
+    relative = opts.relative or "editor",
     width = math.max(width, 20),
     height = math.max(height, 3),
     row = row,

@@ -25,6 +25,7 @@
 ---@field border string Border style ('rounded', 'single', 'double', 'none')
 ---@field max_width number Maximum window width
 ---@field max_height number Maximum window height
+---@field relative string Window position reference ('cursor', 'editor', 'win')
 
 ---@class BabelKeymaps Keybindings
 ---@field translate string Translate selection (visual mode)
@@ -46,6 +47,7 @@ local defaults = {
     border = "rounded",
     max_width = 80,
     max_height = 20,
+    relative = "cursor",
   },
   keymaps = {
     translate = "<leader>tr",
