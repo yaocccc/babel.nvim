@@ -1,8 +1,6 @@
 local M = {}
-
 local config = require("babel.config")
 
---- Gets api key from config/env
 local function get_api_key()
   local key = config.options.deepl and config.options.deepl.api_key
   if key then
@@ -43,11 +41,6 @@ local function map_source_lang(source)
   end
 end
 
----Translate text using Deepl
----@param text string Text to translate
----@param source string Source language code
----@param target string Target language code
----@param callback fun(result: string) Callback with translated text
 function M.translate(text, source, target, callback)
   local api_key = get_api_key()
   local endpoint = get_endpoint(api_key)

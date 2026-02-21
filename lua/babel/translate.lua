@@ -3,21 +3,15 @@ local M = {}
 local config = require("babel.config")
 local ui = require("babel.ui")
 
--- Provider registry
 local providers = {
   google = require("babel.providers.google"),
   deepl = require("babel.providers.deepl"),
 }
 
----Get providers by name
----@param name string
----@return table?
 local function get_provider(name)
   return providers[name]
 end
 
----Translates text
----@param text string Text to translate
 function M.translate(text)
   local opts = config.options
   local provider = get_provider(opts.provider)
